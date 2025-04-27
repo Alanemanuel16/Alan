@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lage="ES">
+<head>
+<meta charset="UTF-19">
+<meta  name= "viewport" content="width=device-width, initial-scale=1.0">
+<title>Escuela de New-HanShan</title>
+</head>
+</body>
+<header>
+</h1>Escuela de NEW-HanShan</h1>
+</nav>
+<ul>
+    <li><a href="#">lugar donde funciona: centro holistico renacer-Plottier-Neuquen </a></li>
+    <li><a href="#">Fundadora: Yasmmin</a></li>
+    <h3>Yasmmin: Maestra y Ccanalizadora de la medicina de Luz Andromeda y Arcturiana</h3>
+    <h3>Jesi de Antares: Guia de Luz y Amor - Canalizadora de energias - Consteladora Akashica </h3>
+    <h3>Mision:<h3>
+        <h4>Ayudar a la humanidad a volver al origen, conectando con la fuente a traves de tecnicas con energias de elevadas frecuencia, camaras tridimensionales, geometricas, llaves y codigossagrados para el despertar de consciencia e ingresar a la Nueva Era-Humano Luz</h4>
+        <h3>Historia:</h3>
+        <h4>Esta Escuela esoterica fue entregada a yasmmin por sus Maestros Estelares, durante una canalizacion (fecha), con el proposito de ayudar a las semillas estelares a la maestria, a recordar la mision de alma y elevar la conscienciaa la frecuencia energetica de 5ºD</h4>
+
+</ul>
+</nav>
+</header>
+<h4>Blog:</h4>
+<h2>Terapias con Yasmmin:</h2>
+<li><a href="#">Sesiones de Ha-Shama: Sana a nivel fisico, mental,emocional y espiritual, activa dones y ayuda a la persona a elevar la cosiencia.</a>
+    <li><a href="#">Puja y sesiones de Ha-Hemanlek:Energia vibracional que activa la fuerza interior para despertard e  consciencia,  elevando la frecuencia energetica en la persona</a>
+        <li><a href="#">Camara de auto-sanancion Adromedana:Transmuta energias discordantes, integrando la energia de la tierra, el aire,  el fuego, el agua y el Eter en mi.</a>
+            <li><a href="#">Medicina de Luz Atlante Arcturiana: Cirugia Astral y Cuantica Neuronal</a>
+                <li><a href="#">Sanacion Akashica:Desbloquea y libera los cuerpos sutiles de energias de la no luz, que afectan las areas de vida de la persona</a>
+                    <li><a href="#">La Alquimia del Alma para reconectar con la esencia:Camara de activacion y elevacion de frecencia</a>
+<h2>Terapias con Jesi de Antares</h2>
+<li><a href="#">Guia Angelical:La persona recibe la informacion de los guias, para la evolucion y camino espiritual</a>
+    <li><a href="#">Constelaciones Akashicas:Ordenar desde el amor los sistemas familiares para obtener una frecuencia vibracional elevada, sanando el Akasha.</a>
+        <li><a href="#">Camara tridimensional de activacion de 6D:Activa la mente de 5D para elevar la consciencia</a>
+            <li><a href="#">Camara tridimensional de activacion de la 7D:Sana y calibra el cuerpo Ka</a>
+                <li><a href="#">Camara tridimensional de activacion de 9D:Activa y baja informacion de la biblioteca universal y del Akasha</a>
+                    <li><a href="#">Camara tridimensional de activacion de 11D:Despierta la maestria interior y conecta con los maestros guias</a>
+
+
+</ul>
+</nav>
+<div class="container">
+
+
+<footer>
+    <p>Todos los derechos reservados &copy;</p>
+    <a href="./contact.html">Contacto</a>
+</footer>
+</body>
+<script src="./scripts/app.js"></script>
