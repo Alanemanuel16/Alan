@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Enlace</title>
+    </head>
+    <body>
+        <a href="enlace 2.html">Segundo enlace</a>
+        <a href="enlaces 3.html">Tercer enlace</a>
+        <h3>Redes sociales (Yasmmin)</h3>   
+        <a href="https://www.youtube.com/@eldespertardemialma" target="_blank">eldespertardemialma:youtube</a> 
+        <a href="https://www.instagram.com/renacer.centro.holista?igsh=MTI1YTNkMjdiZnVlOA%3D%3D"target="_blank">instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=100065244272117&rdid=qwx93jlzCsltgtkB&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F16LdS69xDN%2F#"target="_blank">facebook</a>
+</html>
