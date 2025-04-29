@@ -24,19 +24,19 @@
 </header>
 <h4>Blog:</h4>
 <h2>Terapias con Yasmmin:</h2>
-<li><a href="#">Sesiones de Ha-Shama: Sana a nivel fisico, mental,emocional y espiritual, activa dones y ayuda a la persona a elevar la cosiencia.</a>
-    <li><a href="#">Puja y sesiones de Ha-Hemanlek:Energia vibracional que activa la fuerza interior para despertard e  consciencia,  elevando la frecuencia energetica en la persona</a>
-        <li><a href="#">Camara de auto-sanancion Adromedana:Transmuta energias discordantes, integrando la energia de la tierra, el aire,  el fuego, el agua y el Eter en mi.</a>
-            <li><a href="#">Medicina de Luz Atlante Arcturiana: Cirugia Astral y Cuantica Neuronal</a>
-                <li><a href="#">Sanacion Akashica:Desbloquea y libera los cuerpos sutiles de energias de la no luz, que afectan las areas de vida de la persona</a>
-                    <li><a href="#">La Alquimia del Alma para reconectar con la esencia:Camara de activacion y elevacion de frecencia</a>
+<h4><li> Sesiones de Ha-Shama: Sana a nivel fisico, mental,emocional y espiritual, activa dones y ayuda a la persona a elevar la cosiencia.</li></h4>
+    <h4><li> Puja y sesiones de Ha-Hemanlek:Energia vibracional que activa la fuerza interior para despertard e  consciencia,  elevando la frecuencia energetica en la persona</li></h4> 
+        <h4><li>Camara de auto-sanancion Adromedana:Transmuta energias discordantes, integrando la energia de la tierra, el aire,  el fuego, el agua y el Eter en mi.</li></h4>
+           <h4> <li>Medicina de Luz Atlante Arcturiana: Cirugia Astral y Cuantica Neuronal</li></h4>
+                <h4><li>Sanacion Akashica:Desbloquea y libera los cuerpos sutiles de energias de la no luz, que afectan las areas de vida de la persona</li></h4>
+                    <h4><li>La Alquimia del Alma para reconectar con la esencia:Camara de activacion y elevacion de frecencia</li></h4>
 <h2>Terapias con Jesi de Antares</h2>
-<li><a href="#">Guia Angelical:La persona recibe la informacion de los guias, para la evolucion y camino espiritual</a>
-    <li><a href="#">Constelaciones Akashicas:Ordenar desde el amor los sistemas familiares para obtener una frecuencia vibracional elevada, sanando el Akasha.</a>
-        <li><a href="#">Camara tridimensional de activacion de 6D:Activa la mente de 5D para elevar la consciencia</a>
-            <li><a href="#">Camara tridimensional de activacion de la 7D:Sana y calibra el cuerpo Ka</a>
-                <li><a href="#">Camara tridimensional de activacion de 9D:Activa y baja informacion de la biblioteca universal y del Akasha</a>
-                    <li><a href="#">Camara tridimensional de activacion de 11D:Despierta la maestria interior y conecta con los maestros guias</a>
+<h4><li>Guia Angelical:La persona recibe la informacion de los guias, para la evolucion y camino espiritual</li></h4>
+    <h4><li>Constelaciones Akashicas:Ordenar desde el amor los sistemas familiares para obtener una frecuencia vibracional elevada, sanando el Akasha.</li></h4>
+       <h4><li>Camara tridimensional de activacion de 6D:Activa la mente de 5D para elevar la consciencia</li></h4>
+           <h4><li>Camara tridimensional de activacion de la 7D:Sana y calibra el cuerpo Ka</li></h4>
+                <h4><li>Camara tridimensional de activacion de 9D:Activa y baja informacion de la biblioteca universal y del Akasha</li></h4>
+                    <h4><li>Camara tridimensional de activacion de 11D:Despierta la maestria interior y conecta con los maestros guias</li></h4>
 
 
 </ul>
@@ -50,3 +50,4 @@
 </footer>
 </body>
 <script src="./scripts/app.js"></script>
+
