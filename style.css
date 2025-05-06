@@ -1,0 +1,225 @@
+body {
+   margin: 0;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background: url('/fondoespacio.jpg') no-repeat center center fixed;
+   background-size: cover;
+   background-attachment: fixed;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+/* Botón hamburguesa */
+.hamburger {
+   position: fixed;
+   top: 20px;
+   right: 20px;
+   z-index: 1001;
+   width: 30px;
+   height: 22px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   cursor: pointer;
+}
+
+.hamburger span {
+   height: 4px;
+   background: white;
+   transition: all 0.3s ease;
+}
+
+/* Menú móvil desplegable */
+.menu {
+   position: fixed;
+   top: 0;
+   right: 0;
+   width: 100%;
+   height: 100vh;
+   background: rgba(0, 0, 0, 0.7);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   padding-top: 80px;
+   gap: 30px;
+   transform: translateX(100%);
+   transition: transform 0.3s ease-in-out;
+   z-index: 1000;
+}
+
+.menu a {
+   font-size: 24px;
+   text-decoration: none;
+   color: white;
+   position: relative;
+   padding-left: 20px;
+}
+
+.menu a::before {
+   content: ">";
+   color: #FF7700;
+   position: absolute;
+   left: 0;
+   top: 0;
+}
+
+.menu.active {
+   transform: translateX(0);
+}
+
+@media (max-width: 599px) {
+   .menu {
+      width: 100%;
+   }
+}
+
+@media (min-width: 600px) {
+   .menu {
+      width: 250px;
+      align-items: flex-start;
+      padding: 60px 20px 20px 30px;
+   }
+}
+
+@media (min-width: 768px) {
+   .menu {
+      width: 300px;
+      height: 100vh;
+      top: 0;
+      right: 0;
+      padding-left: 30px;
+   }
+}
+
+/* Menú elegante en PC */
+.menu-elegante {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   background: rgba(0, 0, 0, 0.7);
+   backdrop-filter: blur(6px);
+   display: flex;
+   justify-content: center;
+   gap: 40px;
+   padding: 15px 0;
+   z-index: 999;
+   box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.menu-elegante a {
+   color: #fff;
+   text-decoration: none;
+   font-size: 16px;
+   font-weight: 600;
+   position: relative;
+   transition: color 0.3s ease;
+}
+
+.menu-elegante a:hover {
+   color: rgb(255, 119, 0);
+}
+
+@media (max-width: 768px) {
+   .menu-elegante {
+      display: none;
+   }
+}
+
+/* Estilo de la imagen de Yasmmin */
+.foto-con-fondo {
+   width: 380px;
+   height: 380px;
+   background-image: none;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 80%;
+   margin-top: -20px;
+   overflow: hidden;
+}
+
+.foto-perfil {
+   width: 150px;
+   height: 150px; 
+   background-image: none;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 70%;
+   margin-top: -20px;
+   overflow: hidden;
+   object-fit: cover;
+}
+
+.foto-con-fondo img.foto-perfil {
+   width: 107%;
+   height: 109%;
+   object-fit: cover;
+   border-radius: 100%;
+}
+
+.info-section {
+   min-height: 100vh;
+   padding: 100px 20px;
+   background-size: cover;
+   background-position: center;
+   color: white;
+   text-shadow: 0 0 8px rgba(0,0,0,0.7);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+
+.info-section h2 {
+   font-size: 36px;
+   margin-bottom: 20px;
+}
+
+.info-section p {
+   font-size: 20px;
+   max-width: 800px;
+}
+
+/* Estilos del submenú */
+.dropdown-content {
+   display: none;
+   position: absolute;
+   background: rgba(0, 0, 0, 0.9);
+   min-width: 160px;
+   top: 100%;
+   left: 0;
+   z-index: 999;
+   flex-direction: column;
+   border-radius: 6px;
+   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.dropdown-content a {
+   color: white;
+   padding: 10px;
+   text-decoration: none;
+   display: block;
+   font-size: 14px;
+}
+
+.dropdown-content a:hover {
+   background-color: #FF7700;
+   color: black;
+}
+
+.dropdown:hover .dropdown-content {
+   display: flex;
+}
+
+.jesi-img {
+   width: 180px;
+   height: auto;
+   border-radius: 90px; 
+   display: block;
+   margin: 0 auto;
+}
