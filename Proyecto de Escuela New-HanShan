@@ -2,52 +2,655 @@
 <html lage="ES">
 <head>
 <meta charset="UTF-19">
+    <meta charset="UTF-8">
 <meta  name= "viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Escuela de New-HanShan</title>
+
+    <style>
+
+        body{
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+        .menu-elegante {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);backdrop-filter: blur(6px);
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 15px 0;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+        }
+
+
+        .menu-elegante a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .menu-elegante a:hover {
+            color:  rgb(255, 119, 0);
+        }
+        @media (max-width: 768px) {
+            .menu-elegante {
+                display:none;
+            }
+        }
+        /*boton de hamburguesa*/
+        .hamburger {
+            width: 30px;
+            height: 22px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .hamburger span {
+            height: 4px;
+            background: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        /*Menu movil desplegable*/
+        .menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 80px;
+            gap: 30px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;z-index: 1000;
+        }
+
+            .menu.active {
+                transform: translateX(0);
+            }
+
+            @media (max-width: 599px) {
+            .menu {
+                width: 100%;
+            }
+}
+
+/* Menú más angosto en pantallas divididas o grandes */
+@media (min-width: 600px) {
+    .menu {
+        width: 250px;
+        align-items: flex-start;
+        padding: 60px 20px 20px 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    .menu {
+        width: 300px;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        padding-left: 30px;
+    }
+
+    /* Estilo de los enlaces del menú */
+    .menu a {
+        font-size: 24px;
+        text-decoration: none;
+        color: white;
+    }
+
+}
+    
+
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-image: url('/fondoespacio.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            padding: 5%;
+
+        }
+        .texto-contenedor {
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            margin: 0;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            margin-top: 10px;
+        
+        }
+        .logo-circular {
+            width: 185px;
+            height: 185px;
+            object-fit: cover;
+            border-radius: 60%;
+            border: 4px transparent rgba(0, 0, 0, 0.6);
+            position:absolute;
+            top: 90px;
+            left: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+            z-index: 10;
+        }
+
+        .dropdown{
+            position: relative;
+            display: inline-block;
+}
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            min-width: 160px;
+            top: 100%;
+            left: 0;
+            z-index: 999;
+            flex-direction: column;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+}
+
+        .dropdown-content a:hover {
+            background-color: #FF7700;
+            color: black;
+}
+
+        .dropdown:hover .dropdown-content {
+        display: flex;
+
+}
+        
+
+        #yasmmin, #jesi {
+        display: none;
+        }
+        /* Imagenes dentro de los círculos con fondo */
+        .foto-con-fondo {
+        width: 350px;
+        height: 350px;
+        background-image: url(/fondoespacio.jpg);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Añadí sombra para darle efecto */
+        }
+
+        .foto-perfil {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%; 
+        }
+
+/* Submenú para el menú hamburguesa (versión móvil) */
+.dropdown-movil {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dropdown-movil > a {
+        font-size: 24px;
+        color: white;
+        text-decoration: none;
+        padding: 10px 0;
+    }
+
+    .submenu-movil {
+        display: none;
+        flex-direction: column;
+        padding-left: 20px;
+        margin-top: 5px;
+    }
+
+    .submenu-movil a {
+        font-size: 20px;
+        color: #ff7700;
+        text-decoration: none;
+        padding: 5px 0;
+    }
+
+    .submenu-movil a:hover {
+        background-color: #FF7700;
+        color: black;
+    }
+
+    /* Eliminar flechitas naranjas en el submenú */
+    .submenu-movil a::before {
+        content: none; /* Asegurarse de que no haya flechas */
+    }
+
+    /* Transición del menú móvil (hamburguesa) */
+    @media (max-width: 767px) {
+        .menu.activate {
+            transform: translateY(0);
+        }
+    }
+
+
+
+/* Centrando la información de las secciones */
+.info-section {
+    min-height: 100vh;
+    padding: 100px 20px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Tamaño de título y subtítulo */
+.info-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.info-section p {
+    font-size: 20px;
+    max-width: 800px;
+}
+
+.info-section {
+  display: none;
+  background-image: url('/fondoespacio.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  color: white;
+  min-height: 100vh;
+}
+
+/* SOLO activar el hover en escritorio */
+@media (min-width: 768px) {
+  .dropdown:hover .dropdown-content {
+    display: flex; /* o block, según tu diseño */
+    flex-direction: column;
+  }
+}
+
+/* Por defecto, ocultar el dropdown */
+.dropdown-content {
+  display: none;
+}
+
+/* Mostrar submenús SOLO al pasar el mouse en escritorio */
+@media (min-width: 768px) {
+    .dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    }
+}
+.jesi-img {
+        width: 150px;
+        height: auto;
+        width: 150px; 
+        display: block;
+        margin: 0 auto;
+}
+        
+
+/* Tipografía y color para todos los links del menú */
+nav a, 
+.menu a, 
+.menu-principal, 
+.subopcion {
+    font-family: 'Arial', sans-serif; /* O la que estés usando */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Flechas naranja */
+.flecha-naranja {
+    color: orange;
+    margin-right: 8px;
+}
+
+/* Flechas blancas dentro de subopciones */
+.flecha-blanca {
+    color: white;
+    margin-right: 5px;
+}
+
+/* Estilo para los submenús del hamburguesa */
+.submenu-movil {
+    display: none;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.subopcion:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* efecto hover sutil */
+}
+
+
+        </style>
 </head>
+<body>
+
+    <body>
+        <body>
+            <!-- Barra de navegación principal -->
+       <nav class="menu-elegante">
+           <a href="javascript:void(0);" onclick="mostrarInicio('Inicio')">Inicio</a>
+   
+           <!-- SOBRE NOSOTRAS -->
+           <div class="dropdown">
+               <a href="#">Sobre nosotras <span class="flecha-naranja">&#9656;</span></a>
+               <div class="dropdown-content">
+                   <a href="javascript:void(0);" onclick="mostrarSeccion('yasmmin')">
+                       <span class="flecha-blanca">&#9656;</span> Yasmmin
+                   </a>
+                   <a href="javascript:void(0);" onclick="mostrarSeccion('jesi')">
+                       <span class="flecha-blanca">&#9656;</span> Jesi de Antares
+                   </a>
+               </div>
+           </div>
+   
+           <!-- BLOG -->
+           <div class="dropdown">
+               <a href="#">Blog <span class="flecha-naranja">&#9656;</span></a>
+               <div class="dropdown-content">
+                   <a href="javascript:void(0);" onclick="mostrarSeccion('terapias-yasmmin')">
+                       <span class="flecha-blanca">&#9656;</span> Terapias con Yasmmin
+                   </a>
+                   <a href="javascript:void(0);" onclick="mostrarSeccion('terapias-jesi')">
+                       <span class="flecha-blanca">&#9656;</span> Terapias con Jesi de Antares
+                   </a>
+               </div>
+           </div>
+   
+           <!-- Formaciones -->
+           <a href="javascript:void(0);" onclick="mostrarSeccion('formaciones')">Formaciones <span class="flecha-naranja">&#9656;</span></a>
+   
+           <!-- Talleres -->
+           <a href="javascript:void(0);" onclick="mostrarSeccion('talleres')">Talleres <span class="flecha-naranja">&#9656;</span></a>
+   
+           <!-- Retiros -->
+           <a href="javascript:void(0);" onclick="mostrarSeccion('retiros')">Retiros <span class="flecha-naranja">&#9656;</span></a>
+       </nav>
+   
+       <!-- Ícono menú hamburguesa -->
+       <div class="hamburger" id="hamburger">
+           <span></span>
+           <span></span>
+           <span></span>
+       </div>
+   
+       <!-- Menú hamburguesa (versión móvil) -->
+       <nav class="menu" id="menu">
+           <a href="javascript:void(0);" onclick="mostrarInicio('Inicio')"><span class="flecha-naranja">&#9656;</span> Inicio
+        </a>
+   
+           <!-- Submenú desplegable móvil -->
+           <div class="dropdown-movil">
+               <a href="javascript:void(0);" onclick="toggleSubmenu()" class="menu-principal">
+                   <span class="flecha-naranja">&#9656;</span> Sobre nosotras
+               </a>
+               <div class="submenu-movil" id="submenuNosotras">
+                   <a href="javascript:void(0);" onclick="mostrarSeccion('yasmmin')" class="subopcion">
+                       <span class="flecha-blanca">&#9656;</span> Yasmmin
+                   </a>
+                   <a href="javascript:void(0);" onclick="mostrarSeccion('jesi')" class="subopcion">
+                       <span class="flecha-blanca">&#9656;</span> Jesi de Antares
+                   </a>
+               </div>
+           </div>
+   
+           <!-- Menú hamburguesa (Blog) -->
+           <div class="dropdown-movil">
+               <a href="javascript:void(0);" onclick="toggleSubmenuBlog()" class="menu-principal">
+                   <span class="flecha-naranja">&#9656;</span> Blog
+               </a>
+               <div class="submenu-movil" id="submenuBlog">
+                   <a href="javascript:void(0);" onclick="mostrarSeccion('terapias-yasmmin')" class="subopcion">
+                       <span class="flecha-blanca">&#9656;</span> Terapias con Yasmmin
+                   </a>
+                   <a href="javascript:void(0);" onclick="mostrarSeccion('terapias-jesi')" class="subopcion">
+                       <span class="flecha-blanca">&#9656;</span> Terapias con Jesi de Antares
+                   </a>
+               </div>
+           </div>
+   
+           <!-- Menú hamburguesa (Formaciones) -->
+           <a href="javascript:void(0);" onclick="mostrarSeccion('formaciones')">
+               <span class="flecha-naranja">&#9656;</span> Formaciones
+           </a>
+   
+           <!-- Menú hamburguesa (Talleres) -->
+           <a href="javascript:void(0);" onclick="mostrarSeccion('talleres')">
+               <span class="flecha-naranja">&#9656;</span> Talleres
+           </a>
+   
+           <!-- Menú hamburguesa (Retiros) -->
+           <a href="javascript:void(0);" onclick="mostrarSeccion('retiros')">
+               <span class="flecha-naranja">&#9656;</span> Retiros
+           </a>
+       </nav>
+   
+       <!-- Hero -->
+       <div class="hero">
+           <img src="/Logoescuela.jpg" alt="Logoescuela" class="logo-circular" id="logo">
+           <div class="texto-contenedor" id="texto-hero">
+               <h1 class="titulo">Escuela New-HanShan</h1>
+               <h2 class="subtitulo">Fundadora de la escuela Yasmmin</h2>
+           </div>
+       </div>
+   
+   
+       <section id="formaciones" class="info-section" style="display: none;">
+           <h2>Formaciones</h2>
+           <p>La Escuela New-HanShan ofrece las siguientes formaciones:</p>
+           <ul>
+               <li>ARCAI - Medicina de luz Atlante Arcturiana (Cirugía Astral y Cuántica Neuronal)</li>
+               <li>Tarot - Guía Angelical</li>
+               <li>Constelación Akáshica</li>
+           </ul>
+       </section>
+   
+       <section id="talleres" class="info-section" style="display: none;">
+           <h2>Talleres</h2>
+    <p>Explorá nuestros talleres canalizados para la autosanación y reconexión espiritual:</p>
+    <ul>
+        <li>Ha-Hemaniek</li>
+        <li>La Alquimia del Alma para reconectar con la esencia</li>
+        <li>Cámaras tridimensionales para la auto-sanación</li>
+        <li>Cámara Andromedana de los Elementales (Tierra, Aire, Fuego, Agua, Éter)</li>
+    </ul>
+       </section>
+   
+       <section id="retiros" class="info-section" style="display: none;">
+        <h2>Retiros</h2>
+        <p>Sumate a nuestras experiencias inmersivas para reconectar con tu origen:</p>
+        <ul>
+            <li><strong>"Regreso a mi ser: Conectándome con las frecuencias Luz de mi origen"</strong> - Dias 12, 13, 14 y 15 de junio - Concepción del Uruguay, Entre Ríos</li>
+        </ul>
+           </ul>
+       </section>
+   
+       <section id="yasmmin" class="info-section" style="display: none;">
+           <div class="foto-con-fondo">
+               <img src="imagenes/yasmmin.jpg" alt="Yasmmin" class="foto-perfil">
+           </div>
+           <h2>Yasmmin</h2>
+           <p>Yasmmin Maestra y Canalizadora de la Medicina de Luz Andromeda y Acturiana</p>
+       </section>
+   
+       <section id="jesi" class="info-section" style="display: none;">
+           <div class="foto-perfil">
+               <img src="imagenes/jesideantares.jpg" alt="Jesi de Antares" class="jesi.img">
+           </div>
+           <h2>Jesi de Antares</h2>
+           <p>Guía de Luz y Amor - Canalizadora de energías - Consteladora Akáshica</p>
+       </section>
+   
+       <section id="terapias-yasmmin" class="info-section" style="display: none;">
+           <h2>Terapias con Yasmmin</h2>
+           <p>Yasmmin ofrece sesiones de sanación con la Medicina de Luz Andromedana, activaciones de ADN y limpieza energética profunda.</p>
+           <h4><li>Sesiones de Ha-Shama: Sana a nivel físico, mental, emocional y espiritual, activa dones y eleva la consciencia.</li></h4>
+           <h4><li>Puja y sesiones de Ha-Hemanlek: Energía vibracional que activa la fuerza interior para despertar la consciencia.</li></h4>
+       </section>
+   
+       <section id="terapias-jesi" class="info-section" style="display: none;">
+           <h2>Terapias con Jesi de Antares</h2>
+           <p>Jesi canaliza energías cósmicas y ofrece sesiones de constelación akáshica para desbloquear memorias del alma.</p>
+       </section>
+
+       <!-- Sección Talleres -->
+<section id="talleres" class="info-section" style="display: none;">
+    <h2>Talleres</h2>
+    <p>Explorá nuestros talleres canalizados para la autosanación y reconexión espiritual:</p>
+    <ul>
+        <li>Ha-Hemaniek</li>
+        <li>La Alquimia del Alma para reconectar con la esencia</li>
+        <li>Cámaras tridimensionales para la auto-sanación</li>
+        <li>Cámara Andromedana de los Elementales (Tierra, Aire, Fuego, Agua, Éter)</li>
+    </ul>
+</section>
+
+<!-- Sección Retiros -->
+<section id="retiros" class="info-section" style="display: none;">
+    <h2>Retiros</h2>
+    <p>Sumate a nuestras experiencias inmersivas para reconectar con tu origen:</p>
+    <ul>
+        <li><strong>"Regreso a mi ser: Conectándome con las frecuencias Luz de mi origen"</strong> - Dias 12, 13, 14 y 15 de junio - Concepción del Uruguay, Entre Ríos</li>
+    </ul>
+</section>
+   
+
+
+
+
+
+
 </body>
-<header>
-</h1>Escuela de NEW-HanShan</h1>
-</nav>
-<ul>
-    <li><a href="#">lugar donde funciona: centro holistico renacer-Plottier-Neuquen </a></li>
-    <li><a href="#">Fundadora: Yasmmin</a></li>
-    <h3>Yasmmin: Maestra y Ccanalizadora de la medicina de Luz Andromeda y Arcturiana</h3>
-    <h3>Jesi de Antares: Guia de Luz y Amor - Canalizadora de energias - Consteladora Akashica </h3>
-    <h3>Mision:<h3>
-        <h4>Ayudar a la humanidad a volver al origen, conectando con la fuente a traves de tecnicas con energias de elevadas frecuencia, camaras tridimensionales, geometricas, llaves y codigossagrados para el despertar de consciencia e ingresar a la Nueva Era-Humano Luz</h4>
-        <h3>Historia:</h3>
-        <h4>Esta Escuela esoterica fue entregada a yasmmin por sus Maestros Estelares, durante una canalizacion (fecha), con el proposito de ayudar a las semillas estelares a la maestria, a recordar la mision de alma y elevar la conscienciaa la frecuencia energetica de 5ºD</h4>
-
-</ul>
-</nav>
-</header>
-<h4>Blog:</h4>
-<h2>Terapias con Yasmmin:</h2>
-<h4><li> Sesiones de Ha-Shama: Sana a nivel fisico, mental,emocional y espiritual, activa dones y ayuda a la persona a elevar la cosiencia.</li></h4>
-    <h4><li> Puja y sesiones de Ha-Hemanlek:Energia vibracional que activa la fuerza interior para despertard e  consciencia,  elevando la frecuencia energetica en la persona</li></h4> 
-        <h4><li>Camara de auto-sanancion Adromedana:Transmuta energias discordantes, integrando la energia de la tierra, el aire,  el fuego, el agua y el Eter en mi.</li></h4>
-           <h4> <li>Medicina de Luz Atlante Arcturiana: Cirugia Astral y Cuantica Neuronal</li></h4>
-                <h4><li>Sanacion Akashica:Desbloquea y libera los cuerpos sutiles de energias de la no luz, que afectan las areas de vida de la persona</li></h4>
-                    <h4><li>La Alquimia del Alma para reconectar con la esencia:Camara de activacion y elevacion de frecencia</li></h4>
-<h2>Terapias con Jesi de Antares</h2>
-<h4><li>Guia Angelical:La persona recibe la informacion de los guias, para la evolucion y camino espiritual</li></h4>
-    <h4><li>Constelaciones Akashicas:Ordenar desde el amor los sistemas familiares para obtener una frecuencia vibracional elevada, sanando el Akasha.</li></h4>
-       <h4><li>Camara tridimensional de activacion de 6D:Activa la mente de 5D para elevar la consciencia</li></h4>
-           <h4><li>Camara tridimensional de activacion de la 7D:Sana y calibra el cuerpo Ka</li></h4>
-                <h4><li>Camara tridimensional de activacion de 9D:Activa y baja informacion de la biblioteca universal y del Akasha</li></h4>
-                    <h4><li>Camara tridimensional de activacion de 11D:Despierta la maestria interior y conecta con los maestros guias</li></h4>
 
 
-</ul>
-</nav>
-<div class="container">
 
 
-<footer>
-    <p>Todos los derechos reservados &copy;</p>
-    <a href="./contact.html">Contacto</a>
-</footer>
+
+    <script>
+
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+
+    // Abrir y cerrar menú hamburguesa
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
+
+    // Función principal para mostrar secciones
+    function mostrarSeccion(id) {
+        // Ocultar el bloque principal (hero)
+        document.querySelector('.hero').style.display = 'none';
+
+        // Ocultar todas las secciones
+        const secciones = document.querySelectorAll('.info-section');
+        secciones.forEach(sec => {
+            sec.style.display = 'none';
+        });
+
+        // Mostrar solo la sección seleccionada
+        const seleccionada = document.getElementById(id);
+        if (seleccionada) {
+            seleccionada.style.display = 'flex'; // O 'block', según tu diseño
+            window.scrollTo({ top: 0, behavior: 'instant' }); // Evita que baje el scroll
+        }
+
+        // Cerrar menú hamburguesa en móviles
+        menu.classList.remove('active');
+        hamburger.classList.remove('active');
+    }
+
+
+    function mostrarInicio() {
+    // Mostrar la sección principal con el logo
+    document.querySelector('.hero').style.display = 'flex';
+
+    // Ocultar TODAS las secciones de contenido
+    const secciones = document.querySelectorAll('.info-section');
+    secciones.forEach(seccion => {
+        seccion.style.display = 'none';
+    });
+
+    // Cerrar menú hamburguesa si está abierto
+    menu.classList.remove('active');
+    hamburger.classList.remove('active');
+}
+
+
+
+    // Submenús en el menú hamburguesa
+    function toggleSubmenu() {
+        const submenu = document.getElementById('submenuNosotras');
+        submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function toggleSubmenuBlog() {
+        const submenu = document.getElementById('submenuBlog');
+        submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+</script>
+
+
+    <link rel="stylesheet" href="style.css"
+
 </body>
-<script src="./scripts/app.js"></script>
+</html>
 
