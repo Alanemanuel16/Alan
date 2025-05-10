@@ -1,0 +1,46 @@
+                <!-- Barra de navegación principal -->
+                
+                 <nav class="menu-elegante">
+                <div class="logo-titulo">
+            <img class="logo-superior" src="/Logoescuela.jpg">
+            <h2 class="logo-superior-titulo">New-HanShan</h2>
+            </div> 
+            
+            <div class="menu-central">
+            <a href="javascript:void(0);" onclick="mostrarInicio('Inicio')">Inicio</a>
+   
+           <!-- SOBRE NOSOTRAS -->
+           <div class="dropdown">
+               <a href="#">Sobre nosotras</a> 
+               <div class="dropdown-content">
+                   <a href="javascript:void(0);" onclick="mostrarSeccion('yasmmin')">
+                       <span class="flecha-naranja">&#9656;</span> Yasmmin
+                   </a>
+                   <a href="javascript:void(0);" onclick="mostrarSeccion('jesi')">
+                       <span class="flecha-naranja">&#9656;</span> Jesi de Antares
+                   </a>
+               </div>
+           </div>
+   
+           <!-- BLOG -->
+           <div class="dropdown">
+               <a href="#">Blog</a>
+               <div class="dropdown-content">
+                   <a href="javascript:void(0);" onclick="mostrarSeccion('terapias-yasmmin')">
+                       <span class="flecha-naranja">&#9656;</span> Terapias con Yasmmin
+                   </a>
+                   <a href="javascript:void(0);" onclick="mostrarSeccion('terapias-jesi')">
+                       <span class="flecha-naranja">&#9656;</span> Terapias con Jesi de Antares
+                   </a>
+               </div>
+           </div>
+   
+           <!-- Formaciones -->
+           <a href="javascript:void(0);" onclick="mostrarSeccion('formaciones')">formaciones</a>
+           <!-- Talleres -->
+           <a href="javascript:void(0);" onclick="mostrarSeccion('talleres')">Talleres</a>
+
+            <!-- Retiros -->
+            <a href="javascript:void(0);" onclick="mostrarSeccion('retiros')">Retiros</a>
+        </div>
+        </nav>
