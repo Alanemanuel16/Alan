@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lage="ES">
+<head>
+<meta charset="UTF-19">
+    <meta charset="UTF-8">
+<meta  name= "viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New-HanShan</title>
+    
+</head>
+
+
+        <body>
+            <header>
+                <!-- Barra de navegación principal -->
+                
+            <nav class="menu-elegante">
+            <div class="logo-titulo">
+            <img class="logo-superior" src="/Logoescuela.jpg">
+            <span class="logo-superior-titulo">New-HanShan</span>
+            </div> 
+            
+            <div class="menu-central">
+            <a href="javascript:void(0);" onclick="mostrarInicio('Inicio')">Inicio</a>
+   
+           <!-- SOBRE NOSOTRAS -->
+           <div class="dropdown">
+               <a href="#">Sobre nosotras</a> 
+               <div class="dropdown-content">
+                   <a href="javascript:void(0);" onclick="mostrarSeccion('yasmmin')">
+                       <span class="flecha-naranja">&#9656;</span> Yasmmin
+                   </a>
+                   <a href="javascript:void(0);" onclick="mostrarSeccion('jesi')">
+                       <span class="flecha-naranja">&#9656;</span> Jesi de Antares
+                   </a>
+               </div>
+           </div>
+   
+           <!-- BLOG -->
+           <div class="dropdown">
+               <a href="#">Blog</a>
+               <div class="dropdown-content">
+                   <a href="javascript:void(0);" onclick="mostrarSeccion('terapias-yasmmin')">
+                       <span class="flecha-naranja">&#9656;</span> Terapias con Yasmmin
+                   </a>
+                   <a href="javascript:void(0);" onclick="mostrarSeccion('terapias-jesi')">
+                       <span class="flecha-naranja">&#9656;</span> Terapias con Jesi de Antares
+                   </a>
+               </div>
+           </div>
+   
+           <!-- Formaciones -->
+           <a href="javascript:void(0);" onclick="mostrarSeccion('formaciones')">formaciones</a>
+           <!-- Talleres -->
+           <a href="javascript:void(0);" onclick="mostrarSeccion('talleres')">Talleres</a>
+
+            <!-- Retiros -->
+            <a href="javascript:void(0);" onclick="mostrarSeccion('retiros')">Retiros</a>
+
+            <a href="javascript:void(0);" onclick="mostrarFavoritos()">Favoritos</a>
+        </div>
+        </nav>
+
+        <!-- Ícono menú hamburguesa -->
+            <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+    </div>
+
+        <!-- Menú hamburguesa (versión móvil) -->
+        <nav class="menu" id="menu">
+
+            <div class="dropdown-movil">
+                <a href="javascript:void(0);" onclick="mostrarInicio('Inicio')" class="menu-principal">
+                    <span class="flecha-naranja">&#9656;</span><strong>Inicio</strong> 
+                </a>
+            </div>
+        
+            <div class="dropdown-movil">
+                <a href="javascript:void(0);" onclick="toggleSubmenu()" class="menu-principal">
+                    <span class="flecha-naranja">&#9656;</span><strong>Sobre nosotras</strong>
+                </a>
+                <div class="submenu-movil" id="submenuNosotras">
+                    <a href="javascript:void(0);" onclick="mostrarSeccion('yasmmin')" class="subopcion">
+                        <span class="flecha-blanca">&#9656;</span> Yasmmin
+                    </a>
+                    <a href="javascript:void(0);" onclick="mostrarSeccion('jesi')" class="subopcion">
+                        <span class="flecha-blanca">&#9656;</span> Jesi de Antares
+                    </a>
+                </div>
+            </div>
+        
+            <div class="dropdown-movil">
+                <a href="javascript:void(0);" onclick="toggleSubmenuBlog()" class="menu-principal">
+                    <span class="flecha-naranja">&#9656;</span><strong>Blog</strong>
+                </a>
+                <div class="submenu-movil" id="submenuBlog">
+                    <a href="javascript:void(0);" onclick="mostrarSeccion('terapias-yasmmin')" class="subopcion">
+                        <span class="flecha-blanca">&#9656;</span> Terapias con Yasmmin
+                    </a>
+                    <a href="javascript:void(0);" onclick="mostrarSeccion('terapias-jesi')" class="subopcion">
+                        <span class="flecha-blanca">&#9656;</span> Terapias con Jesi de Antares
+                    </a>
+                </div>
+            </div>
+        
+            <div class="dropdown-movil">
+                <a href="javascript:void(0);" onclick="mostrarSeccion('formaciones')" class="menu-principal">
+                    <span class="flecha-naranja">&#9656;</span><strong>Formaciones</strong>
+                </a>
+            </div>
+        
+            <div class="dropdown-movil">
+                <a href="javascript:void(0);" onclick="mostrarSeccion('talleres')" class="menu-principal">
+                    <span class="flecha-naranja">&#9656;</span><strong>Talleres</strong>
+                </a>
+            </div>
+        
+            <div class="dropdown-movil">
+                <a href="javascript:void(0);" onclick="mostrarSeccion('retiros')" class="menu-principal">
+                    <span class="flecha-naranja">&#9656;</span><strong>Retiros</strong>
+                </a>
+            </div>
+        
+            <div class="dropdown-movil">
+                <a href="javascript:void(0);" onclick="mostrarFavoritos('favoritos')" class="menu-principal">
+                    <span class="flecha-naranja">&#9656;</span><strong>Favoritos</strong>
+                </a>
+            </div>
+        </nav>
+   
+       <!-- Hero -->
+       <div class="hero">
+           <img class="logo-circular" src="/Logoescuela.jpg" alt="Logoescuela">
+           <div class="texto-contenedor">
+               <h1 class="titulo">Escuela New-HanShan</h1>
+               <h2 class="subtitulo">Fundadora de la escuela Yasmmin</h2>
+           </div>
+       </div>
+   
+   
+
+
+
+       <section id="yasmmin" class="info-section" style="display: none;">
+           <div class="foto-con-fondo">
+               <img src="imagenes/yasmmin.jpg" alt="Yasmmin" class="foto-perfil">
+           </div>
+           <h2>Yasmmin</h2>
+           <p>Yasmmin Maestra y Canalizadora de la Medicina de Luz Atlante Arcturiana y Andromedana</p>
+       </section>
+   
+       <section id="jesi" class="info-section" style="display: none;">
+           <div class="foto-perfil">
+               <img src="imagenes/jesideantares.jpg" alt="Jesi de Antares" class="jesi-img">
+           </div>
+           <h2>Jesi de Antares</h2>
+           <p>Guía de Luz y Amor - Canalizadora de energías - Consteladora Akáshica</p>
+       </section>
+   
+                <!-- Sección Terapias con Yasmmin -->
+       <section id="terapias-yasmmin" class="info-section" style="display: none;">
+        <h2>Terapias con Yasmmin</h2>
+
+            <div class="grid-tarjetas">
+
+                <div class="tarjeta-taller" data-id="terapia-ha-shama">
+                <img src="imagenes/Ha-Shama.jpg" alt="Ha-Shama">
+                <p><strong>Sesiones de Ha-Shama</strong>: Sesiones de Ha-Shama: Sana a nivel fisico, mental,emocional y espiritual, activa dones y ayuda a la persona a elevar la cosiencia.</p>
+                <span class="estrella" onclick="toggleFavorito(this)">★</span>
+                </div>
+              
+                <div class="tarjeta-taller" data-id="terapia-puja">
+                <img src="imagenes/Ha-Hemaniek1.jpg" alt="Ha-Hemaniek1">
+                <p><strong>Puja y Ha-Hemanlek</strong>: Puja y sesiones de Ha-Hemanlek: Activa la fuerza interior y la consciencia. Energia vibracional que activa la fuerza interior para despertard e  consciencia,  elevando la frecuencia energetica en la persona</p>
+                <span class="estrella" onclick="toggleFavorito(this)">★</span>
+                </div>
+              
+                <div class="tarjeta-taller" data-id="terapia-camara-auto">
+                <img src="imagenes/Camara de Sanaciones Andromedana.jpg" alt="Camara de Sanación Andromedana">
+                <p><strong>Cámara de auto-sanación</strong>:Camara de auto-sanancion Adromedana:Transmuta energias discordantes, integrando la energia de la tierra, el aire,  el fuego, el agua y el Eter en mi.</p>
+                <span class="estrella" onclick="toggleFavorito(this)">★</span>
+                </div>
+              
+                <div class="tarjeta-taller" data-id="terapia-medicina-luz">
+                <img src="imagenes/Medicina de Luz Atlante Arcturiana.jpg" alt="Medicina de Luz Atlante Arcturiana">
+                <p><strong>Medicina de Luz</strong>: Medicina de Luz Atlante Arcturiana: Cirugia Astral y Cuantica Neuronal.</p>
+                <span class="estrella" onclick="toggleFavorito(this)">★</span>
+                </div>
+              
+                <div class="tarjeta-taller" data-id="terapia-sanacion-kashica">
+                <img src="imagenes/Sananciones Akashicas.jpg" alt="Sanación Kashica">
+                <p><strong>Sanación Kashica</strong>:Sanacion Akashica:Desbloquea y libera los cuerpos sutiles de energias de la no luz, que afectan las areas de vida de la persona.</p>
+                <span class="estrella" onclick="toggleFavorito(this)">★</span>
+                </div>
+              
+                <div class="tarjeta-taller" data-id="terapia-alquimia">
+                <img src="imagenes/Alquimia del Alma2.jpg" alt="Alquimia del Alma">
+                <p><strong>Alquimia del alma</strong>:La Alquimia del Alma para reconectar con la esencia:Camara de activacion y elevacion de frecencia.</p>
+                <span class="estrella" onclick="toggleFavorito(this)">★</span>
+                </div>
+            </div>
+    </section>
+
+                    <!-- Sección Terapias con Jesi de Antares -->
+                    <section id="terapias-jesi" class="info-section" style="display: none;">
+                        <h2>Terapias con Jesi de Antares</h2>
+                        <div class="grid-tarjetas">
+                            <div class="tarjeta-taller" data-id="terapia-Guia Angelical">
+                            <img src="imagenes/Guia Angelical.jpg" alt="Guía Angelical">
+                            <p><strong>Guía Angelical</strong>: Recibí información de tus guías para tu evolución espiritual.</p>
+                            <span class="estrella" onclick="toggleFavorito(this)">★</span>
+                        </div>
+                
+                            <div class="tarjeta-taller" data-id="terapia-constelaciones">
+                            <img src="imagenes/Constelaciones Akashicas.jpg" alt="Constelaciones Akáshicas">
+                            <p><strong>Constelaciones Akáshicas</strong>: Sanación de sistemas familiares a través del Akasha.</p>
+                            <span class="estrella" onclick="toggleFavorito(this)">★</span>
+                        </div>
+                
+                            <div class="tarjeta-taller" data-id="terapia-Camara tridimensional 6D">
+                            <img src="imagenes/Camara tridimensional de activacion de 6D.jpg" alt="Cámara de activación 6D">
+                            <p><strong>Activación de 6D</strong>: Activa la mente 5D y elevá tu consciencia.</p>
+                            <span class="estrella" onclick="toggleFavorito(this)">★</span>
+                        </div>
+                
+                            <div class="tarjeta-taller" data-id="terapia-Camara tridimensional 7D">
+                            <img src="imagenes/Camara tridimensional de activacion de 7D.jpg" alt="Cámara de activación 7D">
+                            <p><strong>Activación de 7D</strong>: Sana y calibrá el cuerpo Ka.</p>
+                            <span class="estrella" onclick="toggleFavorito(this)">★</span>
+                        </div>
+                    </div>
+            </section>
+
+
+
+                    <!-- Sección Formaciones -->
+            <section id="formaciones" class="info-section" style="display: none;">
+                <h2>Formaciones</h2>
+                <p>La Escuela New-HanShan ofrece las siguientes formaciones:</p>
+                <ul>
+                <li data-id="formacion-arcai">ARCAI - Medicina de luz Atlante Arcturiana (Cirugía Astral y Cuántica Neuronal) <span class="estrella" onclick="toggleFavorito(this)" title="Agregar a Favoritos">★</span></li>
+                <li data-id="formacion-tarot">Tarot - Guía Angelical <span class="estrella" onclick="toggleFavorito(this)" title="Agregar a Favoritos">★</span></li>
+                <li data-id="formacion-constelacion">Constelación Akáshica <span class="estrella" onclick="toggleFavorito(this)" title="Agregar a Favoritos">★</span></li>
+            </ul>
+        </section>
+
+
+
+
+             <!-- Sección Talleres -->
+             <section id="talleres" class="info-section" style="display: none;">
+                <h2>Talleres</h2>
+                <div class="grid-tarjetas"></div>
+                <p>Explorá nuestros talleres canalizados para la autosanación y reconexión espiritual:</p>
+
+                    <div class="grid-tarjetas">
+                        <div class="tarjeta-taller" data-id="taller-ha-hemaniek">
+                          <img src="imagenes/Ha-Hemaniek (2).jpg" alt="Ha-Hemaniek">
+                          <p>Ha-Hemaniek</p>
+                          <span class="estrella" onclick="toggleFavorito(this)">★</span>
+                        </div>
+                      
+                        <div class="tarjeta-taller" data-id="taller-alquimia">
+                          <img src="imagenes/Alquimia del Alma.jpg" alt="Alquimia del Alma">
+                          <p>La Alquimia del Alma para reconectar con la esencia</p>
+                          <span class="estrella" onclick="toggleFavorito(this)">★</span>
+                        </div>
+                      
+                        <div class="tarjeta-taller" data-id="taller-camaras">
+                          <img src="imagenes/Camara de Autosanacion.jpg" alt="Cámaras tridimensionales">
+                          <p>Cámaras tridimensionales para la auto-sanación</p>
+                          <span class="estrella" onclick="toggleFavorito(this)">★</span>
+                        </div>
+                      
+                        <div class="tarjeta-taller" data-id="taller-elementales">
+                          <img src="imagenes/Camara Andromedana.jpg" alt="Cámara Andromedana">
+                          <p>Cámara Andromedana de los Elementales</p>
+                          <span class="estrella" onclick="toggleFavorito(this)">★</span>
+                        </div>
+                    </div>
+              </section>
+
+
+        <!-- Sección Retiros -->
+        <section id="retiros" class="info-section" style="display: none;">
+            <h2>Retiros</h2>
+            <p>Sumate a nuestras experiencias inmersivas para reconectar con tu origen:</p>
+        <ul>
+            <li><strong>"Regreso a mi ser: Conectándome con las frecuencias Luz de mi origen"</strong></li>
+                <h2>- 12, 13, 14 y 15 de junio - Concepción del Uruguay, Entre Ríos</h2>
+            
+        </ul>
+        </section>
+
+
+        
+        <!-- Sección Favoritos -->
+        <section id="favoritos" class="info-section" style="display: none;">
+            <h2>Mis Favoritos</h2>
+            <div id="lista-favoritos" class="grid-tarjetas"></div>
+        </section>
+
+
+
+
+
+
+</header>
+</body>
+
+
+
+
+
+    <script src="script.js"></script>
+
+
+    <link rel="stylesheet" href="style.css">
+
+</body>
+</html>
