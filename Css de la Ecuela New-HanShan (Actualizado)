@@ -1,0 +1,544 @@
+body {
+   background-image: url('/fondoespacio.jpg');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   margin: 0;
+   padding: 0;
+}
+
+
+
+   html {
+   scroll-behavior: smooth;
+   box-sizing: border-box;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+*, *:before, *:after {
+   box-sizing: inherit;
+}
+
+.menu-elegante {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: rgba(0, 0, 0, 0.6);
+   padding: 10px 20px;
+   width: 100%;
+   top: 0;
+   left: 0;
+   z-index: 1000;
+   box-sizing: border-box;
+   position: fixed;
+   
+}
+.logo-titulo {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   flex-shrink: 0;
+}
+.logo-superior {
+   height: 50px;
+   width: auto;
+
+}
+.logo-superior-titulo  {
+   color: white;
+   font-size: 20px;
+   margin: 0;
+}
+
+.menu-central {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 20px;
+   flex: 2;
+}
+.menu-central a {
+   color: white;
+   text-decoration: none;
+   font-weight: bold;
+   padding: 10px 12px;
+   transition: background-color 0.3s ease;
+}
+.menu-central a:hover{
+   background-color: rgba(255, 255, 255, 0.2);
+   border-radius: 5px;
+}
+
+/* Solo ocultar en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+   .menu-central {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      width: 100%;
+   }
+}
+
+
+
+.menu-elegante a {
+   color: #fff;
+   text-decoration: none;
+   font-size: 20px;
+   font-weight: 600;
+   position: relative;
+   transition: color 0.3s ease;
+}
+
+.menu-elegante a:hover {
+   color:  rgb(255, 119, 0);
+}
+
+
+@media (max-width: 768px) {
+   .menu-elegante {
+   padding: 10px 20px;
+   }
+}
+   /*boton de hamburguesa*/
+
+.hamburger {
+   width: 30px;
+   height: 22px;
+   position: fixed;
+   top: 20px;
+   right: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   cursor: pointer;
+   z-index: 1001;
+}
+
+.hamburger span {
+   height: 4px;
+   background: white;
+   border-radius: 2px;
+}
+/*Menu movil desplegable*/
+.menu {
+   position: fixed;
+   top: 0;
+   right: 0;
+   width: 50vw;
+   max-width: 320px;
+   height: 100vh;
+   background: rgba(0, 0, 0, 0.9);
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   padding: 80px 20px 20px 30px;
+   gap: 20px;
+   transform: translateX(100%);
+   transition: transform 0.3s ease-in-out;
+   z-index: 1000;
+   box-sizing: border-box;
+}
+
+   .menu.active {
+   transform: translateX(0);
+   }
+/* Estilo de los enlaces del menú */
+.menu a {
+font-size: 20px;
+text-decoration: none;
+color: white;
+width: 100%;
+}
+
+#menu a::before{
+content: none;
+}
+
+
+
+.hero {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items:flex-start;
+   justify-content: center;
+   padding: 60px 0 0 80px;
+   position: relative;
+}
+
+@media (max-width: 768px) {
+   .hero {
+   justify-content: center;
+   align-items: center;
+   padding: 0 20px;
+   text-align: center;
+   }
+}
+   .texto-contenedor {
+   text-align: center;
+   }
+
+   .hero h1, .hero h2 {
+   text-align: center;
+   }
+
+   .logo-circular {
+   margin-bottom: 20px;
+   
+   }
+
+.texto-contenedor {
+   color: white;
+   text-align: left;
+
+}
+
+.hero h1 {
+   font-size: 16px;
+   margin: 0;
+   color: white;
+}
+
+.hero h2 {
+   font-size: 32px;
+   margin-top: 10px;
+
+}
+.logo-circular {
+   width: 185px;
+   height: 185px;
+   object-fit: cover;
+   border-radius: 60%;
+   box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+   margin-bottom: 20px;
+   position: static;
+}
+
+.dropdown{
+   position: relative;
+}
+
+.dropdown-content {
+   display: none;
+   position: absolute;
+   top: 100%;
+   left: 0%;
+   background: rgba(0, 0, 0, 0.8);
+   min-width: 200px;
+   z-index: 1000;
+   border-radius: 5px;
+   padding: 5px 0;
+
+}
+.dropdown:hover .dropdown-content {
+   display: block;
+}
+
+@media (min-width: 768px) {
+.dropdown:hover .dropdown-content {
+   display: flex;
+}
+}
+.dropdown-content a {
+   display: block;
+   padding: 10px;
+   color: white;
+   text-decoration: none;
+   font-weight: normal;
+
+}
+
+.dropdown-content a:hover {
+   background-color: rgba(255, 255, 255, 0.1);
+}
+@media screen and (max-width: 768px){
+   .menu-elegante {
+      flex-direction: column;
+      align-items: flex-start;
+   }
+}
+
+
+
+/* Iconos flecha más pequeños */
+.flecha-naranja {
+font-size: 12px;
+margin-right: 6px;
+}
+
+
+
+
+
+
+#yasmmin, #jesi {
+display: none;
+}
+/* Imagenes dentro de los círculos con fondo */
+.foto-con-fondo {
+width: 300px;
+height: 300px;
+background-size: cover;
+background-position: center;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+margin-bottom: 15px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Añadí sombra para darle efecto */
+}
+
+.foto-perfil {
+width: 100%;
+height: 100%;
+background-size: cover;
+background-position: center;
+display: flex;
+align-items: center;
+justify-content: center;
+object-fit: cover;
+border-radius: 50%;
+}
+
+/* Submenú para el menú hamburguesa (versión móvil) */
+.dropdown-movil {
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+
+.dropdown-movil > a {
+font-size: 24px;
+color: white;
+text-decoration: none;
+padding: 10px 0;
+}
+
+.submenu-movil {
+display: none;
+flex-direction: column;
+padding-left: 20px;
+margin-top: 5px;
+}
+
+.submenu-movil a {
+font-size: 20px;
+color: #ff7700;
+text-decoration: none;
+padding: 5px 0;
+}
+
+.submenu-movil a:hover {
+background-color: #FF7700;
+color: black;
+}
+
+/* Eliminar flechitas naranjas en el submenú */
+.submenu-movil a::before {
+content: none; /* Asegurarse de que no haya flechas */
+}
+
+/* Transición del menú móvil (hamburguesa) */
+@media (max-width: 767px) {
+.menu.active {
+   transform: translateY(0);
+}
+}
+
+
+
+/* Centrando la información de las secciones */
+.info-section {
+min-height: 100vh;
+padding: 50px 50px;
+font-size: 35px;
+background-size: cover;
+background-position: left;
+color: white;
+text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: left;
+}
+
+/* Tamaño de título y subtítulo */
+.info-section h2 {
+font-size: 40px;
+margin-bottom: 20px;
+}
+.info-section p {
+font-size: 30px;
+max-width: 800px;
+}
+.info-section h4 {
+font-size: 20px;
+}
+
+.info-section {
+display: none;
+background-size: cover;
+background-position: center;
+padding: 30px;
+color: white;
+min-height: 100vh;
+}
+
+/* SOLO activar el hover en escritorio */
+@media (min-width: 768px) {
+.dropdown:hover .dropdown-content {
+display: flex;}
+}
+/* Por defecto, ocultar el dropdown */
+.dropdown-content {
+display: none;
+}
+
+/* Mostrar submenús SOLO al pasar el mouse en escritorio */
+@media (min-width: 768px) {
+.dropdown:hover .dropdown-content {
+display: flex;
+flex-direction: column;
+}
+}
+.jesi-img {
+width: 20%;
+height: 20%;
+justify-content: center;
+background-position: center;
+align-items: center;
+border-radius: 70%;
+margin-top: -20px;
+}
+
+@media (max-width: 768px) {
+.menu {
+width: 100vw;
+height: 100vh;
+justify-content: flex-start;
+align-items: flex-start;
+padding: 80px 20px 20px 30px;
+box-sizing: border-box;
+}
+}
+
+
+/* Tipografía y color para todos los links del menú */
+nav a, 
+.menu a, 
+.menu-principal, 
+.subopcion {
+font-family: 'Arial', sans-serif;
+color: white;
+text-decoration: none;
+font-size: 20px;
+display: flex;
+align-items: center;
+padding: 10px;
+}
+
+/* Flechas naranja */
+.flecha-naranja {
+color: orange;
+margin-right: 8px;
+}
+
+/* Flechas blancas dentro de subopciones */
+.flecha-blanca {
+color: white;
+margin-right: 5px;
+}
+
+/* Estilo para los submenús del hamburguesa */
+.submenu-movil {
+display: none;
+flex-direction: column;
+padding-left: 20px;
+}
+
+.subopcion:hover {
+background-color: rgba(255, 255, 255, 0.1); /* efecto hover sutil */
+}
+
+.estrella {
+cursor: pointer;
+font-size: 40px;
+color: #ccc;
+margin-left:10px;
+transition: transform 0.3 ease;
+}
+
+.estrella:hover {
+transform: scale(1.5);
+}
+
+.estrella.favorito {
+color: gold;
+}
+
+
+.grid-tarjetas {
+display: flex;
+flex-wrap: wrap;
+gap: 16px;
+justify-content: center;
+padding: 16px;
+}
+
+.tarjeta-taller {
+width: 280px;
+background-color: #F5F5DC;
+border-radius: 12px;
+overflow: hidden;
+text-align: center;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+padding: 12px;
+position: relative;
+}
+
+.tarjeta-taller img {
+width: 100%;
+height: auto;
+object-fit: cover;
+border-radius: 8px;
+}
+
+.tarjeta-taller p {
+margin: 10px 0 5px;
+font-weight: bold;
+color: #600000;
+}
+
+.tarjeta-taller .estrella {
+position: absolute;
+top: 10px;
+right: 10px;
+cursor: pointer;
+font-size: 32px;
+color: gray;
+}
+
+.tarjeta-taller .estrella.favorito {
+color: gold;
+}
+
+body, main {
+   position: relative;
+   z-index: 0;
+}
+
+@media (max-width: 768px) {
+   .jesi-img {
+      width: 300px;
+      height: 300px;
+      margin: 20px auto;
+      display: block;
+      border-radius: 50%;
+      object-fit: cover;
+   }
+}
