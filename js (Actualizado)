@@ -1,0 +1,110 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+
+    // Hamburguesa
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
+
+    // Submenús
+    document.getElementById('submenuToggleNosotras')?.addEventListener('click', toggleSubmenu);
+    document.getElementById('submenuToggleBlog')?.addEventListener('click', toggleSubmenuBlog);
+
+    // Marcar favoritos almacenados
+    const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+    document.querySelectorAll('[data-id]').forEach(item => {
+        const estrella = item.querySelector('.estrella');
+        if (favoritos.includes(item.getAttribute('data-id')) && estrella) {
+            estrella.classList.add('favorito');
+        }
+    });
+
+    // Mostrar favoritos si ya está activa la sección
+    if (document.getElementById('favoritos')?.style.display !== 'none') {
+        mostrarFavoritos();
+    }
+});
+
+// Mostrar secciones
+function mostrarSeccion(id) {
+    document.querySelector('.hero').style.display = 'none';
+    document.querySelectorAll('.info-section').forEach(sec => sec.style.display = 'none');
+    const seleccionada = document.getElementById(id);
+    if (seleccionada) {
+        seleccionada.style.display = 'flex';
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+    document.getElementById('menu').classList.remove('active');
+    document.getElementById('hamburger').classList.remove('active');
+}
+
+function mostrarInicio() {
+    document.querySelector('.hero').style.display = 'flex';
+    document.querySelectorAll('.info-section').forEach(sec => sec.style.display = 'none');
+    document.getElementById('menu').classList.remove('active');
+    document.getElementById('hamburger').classList.remove('active');
+}
+
+// Submenús
+function toggleSubmenu() {
+    const submenu = document.getElementById('submenuNosotras');
+    submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex';
+}
+
+function toggleSubmenuBlog() {
+    const submenu = document.getElementById('submenuBlog');
+    submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex';
+}
+
+// Favoritos
+function toggleFavorito(estrella) {
+    const li = estrella.closest('[data-id]');
+    const id = li.getAttribute('data-id');
+    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+
+    if (favoritos.includes(id)) {
+        favoritos = favoritos.filter(fav => fav !== id);
+        estrella.classList.remove('favorito');
+    } else {
+        favoritos.push(id);
+        estrella.classList.add('favorito');
+    }
+
+    localStorage.setItem('favoritos', JSON.stringify(favoritos));
+}
+
+function mostrarFavoritos() {
+    document.querySelector('.hero').style.display = 'none';
+    document.querySelectorAll('.info-section').forEach(sec => sec.style.display = 'none');
+
+    const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+    const listaFavoritos = document.getElementById('lista-favoritos');
+    listaFavoritos.innerHTML = '';
+
+    if (favoritos.length === 0) {
+        listaFavoritos.innerHTML = '<li>No hay favoritos aún.</li>';
+    } else {
+        favoritos.forEach(id => {
+            const original = document.querySelector(`[data-id="${id}"]`);
+            if (original) {
+                const clon = original.cloneNode(true);
+                const estrella = clon.querySelector('.estrella');
+                if (estrella) {
+                    estrella.onclick = () => toggleFavorito(estrella);
+                }
+                listaFavoritos.appendChild(clon);
+            }
+        });
+    }
+
+    const seccionFavoritos = document.getElementById('favoritos');
+    if (seccionFavoritos) {
+        seccionFavoritos.style.display = 'flex';
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    document.getElementById('menu').classList.remove('active');
+    document.getElementById('hamburger').classList.remove('active');
+}
